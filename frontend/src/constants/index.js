@@ -7,13 +7,7 @@
  * 
  *    These are merely suggested action constants.
  */
-export const GET_RIDES_ASYNC = 'GET_RIDES_ASYNC';
-export const ADD_RIDE_ASYNC = 'ADD_RIDE_ASYNC';
-export const EDIT_RIDE_ASYNC = 'EDIT_RIDE_ASYNC';
-export const DELETE_RIDE_ASYNC = 'DELETE_RIDE_ASYNC';
-
-export const LOGIN_USER_ASYNC = 'LOGIN_USER_ASYNC';
-export const GET_USER_ASYNC = 'GET_USER_ASYNC';
-export const ADD_USER_ASYNC = 'ADD_USER_ASYNC';
-export const EDIT_USER_ASYNC = 'EDIT_USER_ASYNC';
-export const DELETE_USER_ASYNC = 'DELETE_USER_ASYNC';
+export const GET_TEACHERS_ASYNC = 'GET_TEACHERS_ASYNC';
+export const ADD_TEACHER_ASYNC = 'ADD_TEACHER_ASYNC';
+export const EDIT_TEACHER_ASYNC = 'EDIT_TEACHER_ASYNC';
+export const DELETE_TEACHER_ASYNC = 'DELETE_TEACHER_ASYNC';

@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
+import { connect } from 'react-redux';
+
 
 class Tutors extends Component {
   state = {
@@ -11,6 +13,7 @@ class Tutors extends Component {
   navigateToProfile = name => {
 
   }
+  componentDidMount
 
 
   render() {
@@ -18,7 +21,6 @@ class Tutors extends Component {
       <div>
         <input />
         <button> Search </button>
-
 
         <div className='mapBorder'>
           <div className='mapContainer'>
@@ -73,4 +75,8 @@ class Tutors extends Component {
   }
 }
 
-export default Tutors;
+const mapStateToProps = state => ({
+  teachers: state.teachers
+})
+
+export default connect(mapStateToProps)(Tutors);
