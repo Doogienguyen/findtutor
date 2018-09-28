@@ -55,6 +55,7 @@
 ::1 - - [28/Sep/2018:18:56:34 +0000] "GET /api/teachers/ HTTP/1.1" 200 4744 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:19:01:39 +0000] "POST /api/teachers/ HTTP/1.1" 200 699 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:19:01:46 +0000] "GET /api/teachers/ HTTP/1.1" 200 5402 "-" "PostmanRuntime/7.3.0"
+<<<<<<< HEAD
 ::1 - - [28/Sep/2018:20:49:49 +0000] "POST /api/teachers/ HTTP/1.1" 200 1588 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:20:50:03 +0000] "POST /api/teachers/ HTTP/1.1" 200 1273 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:20:50:11 +0000] "POST /api/teachers/ HTTP/1.1" 200 1088 "-" "PostmanRuntime/7.3.0"
@@ -68,3 +69,14 @@
 ::1 - - [28/Sep/2018:21:12:10 +0000] "DELETE /api/teachers/5bae98e26c48aa21cea5874e HTTP/1.1" 500 718 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:21:12:23 +0000] "GET /api/teachers/5bae98e26c48aa21cea5874e HTTP/1.1" 500 45 "-" "PostmanRuntime/7.3.0"
 ::1 - - [28/Sep/2018:21:12:27 +0000] "GET /api/teachers/ HTTP/1.1" 200 5402 "-" "PostmanRuntime/7.3.0"
+=======
+::1 - - [28/Sep/2018:20:47:25 +0000] "GET /api/teachers/ HTTP/1.1" 200 5402 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:20:47:25 +0000] "GET /api/teachers/ HTTP/1.1" 200 5402 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:05:29 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:03 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:04 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:05 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:05 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:06 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+::1 - - [28/Sep/2018:21:06:07 +0000] "GET /api/teachers/ HTTP/1.1" 200 5572 "-" "PostmanRuntime/7.3.0"
+>>>>>>> 0f824f8d7b9fd33e3944268dcc7f7e4d336211c0
