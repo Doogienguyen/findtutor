@@ -7,7 +7,7 @@ const path          = require('path');
 const mongomorgan   = require('mongo-morgan')
 const logger        = require('morgan');
 
-
+const cors = require('cors')
 const app = express();
 const port = 5000;
 
@@ -20,7 +20,7 @@ require('./config/db');
 // middleware
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
+app.use(cors())
 const accessLogStream = fs.createWriteStream(path.join(__dirname, 'access.log'), {flags: 'a'});
 
 

@@ -17,7 +17,7 @@ ul {
   margin-bottom: 0px
 }
 
-text {
+h3 {
   font-size: 14px;
   font-weight: bold;
 }
@@ -50,10 +50,104 @@ text {
   border-color: gainsboro;
   border-width: 1px;
   border-style: solid;
-  margin: 100px 50px 50px 50px;
+  margin: 40px 50px 50px 50px;
 }
 .tutorsImage {
   height: 174px;
   width: 174px;
 }
 
+.test {
+  display: flex;
+}
+
+.test3 {
+  width: 500px;
+}
+.test2 {
+  width: 500px;
+}
+
+.searchBar {
+  margin: 0 auto;
+  width: 22.5%;
+  margin-top: 40px;
+}
+
+
+#img-logo {
+  height: 250px;
+  margin-top: 30px;
+}
+
+.RUber-header {
+  width: 350px;
+  margin: 0 auto;
+}
+.form-left {
+  height: 315px;
+}
+.list-right {
+  height: 400px;
+}
+.gray {
+  background-color: gainsboro;
+  border: 1px solid gray;
+  border-radius: 20px;
+}
+.forms-div {
+  margin-top: 60px;
+}
+.custom-form {
+  margin-top: 40px;
+}
+.custom-button {
+  border-radius: 5px;
+  border: 1px solid black;
+}
+h2 {
+  text-align: center;
+  margin-bottom: 20px;
+}
+.blue {
+  background-color: blue;
+  border: 1px solid black;
+}
+.maroon {
+  background-color: maroon;
+  border: 1px solid black;
+}
+.custom-Left {
+  width:25%;
+  font-size: 14px;
+  padding-bottom: 0px !important;
+  padding-top: 5px !important;
+}
+.custom-Right {
+  font-size: 14px;
+  padding-bottom: 0px !important;
+  padding-top: 5px !important;
+}
+.table-custom {
+  margin-top: 25px;
+}
+hr {
+  display: block;
+  margin-top: 0.5em;
+  margin-bottom: 0.5em;
+  margin-left: auto;
+  margin-right: auto;
+  border-style: inset;
+  border-width: 1px;
+} 
+
+.tutorsContainer {
+  display: flex;
+  flex-direction: row;
+  height: 175px;
+}
+
+.tutorsImage {
+  height: 174px;
+  width: 174px;
+}

@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-
+import { getTeachers } from '../actions/index';
 
 class Tutors extends Component {
   state = {
@@ -13,42 +13,52 @@ class Tutors extends Component {
   navigateToProfile = name => {
 
   }
-  componentDidMount
+
+  componentDidMount() {
+    this.props.getTeachers()
+  }
 
 
   render() {
+    let { teachers } = this.props
     return (
+      this.props.teachers &&
       <div>
-        <input />
-        <button> Search </button>
+        <div className = 'searchBar'>
+          <input />
+          <button className = 'btn btn-primary btn-custom' > Search </button>
+        </div>
 
         <div className='mapBorder'>
           <div className='mapContainer'>
             {/* props.map HERE! */}
-            <div className='tutorsContainer'>
-              <div className='tutorsThumbnail' onClick = {() => this.navigateToProfile('insert name here')}>
-                <img className='tutorsImage' src='https://redwoodcodeacademy.com/wp-content/uploads/2017/02/IMG_0096-12.jpg' />
-                <ul>
-                  <li><text>Name: </text></li>
-                  <li><text>Email: </text></li>
-                  <li><text>Specialization: </text></li>
-                  <li><text>Education History: </text></li>
-                  <li><text>Hourly Rate: </text></li>
-                  <li><text>Location: </text></li>
-                </ul>
-              </div>
-              <div className='tutorsThumbnail2'>
-                <img class='tutorsImage' src='https://scontent-sjc3-1.xx.fbcdn.net/v/t1.0-9/1002658_859187924139444_2581543330501549710_n.jpg?_nc_cat=107&oh=1987b58dff8b8886152a83d05f729fb4&oe=5C52997A' />
-                <ul>
-                  <li><text>Name: </text></li>
-                  <li><text>Email: </text></li>
-                  <li><text>Specialization: </text></li>
-                  <li><text>Education History: </text></li>
-                  <li><text>Hourly Rate: </text></li>
-                  <li><text>Location: </text></li>
-                </ul>
-              </div>
-            </div>
+            {
+              this.props.teachers.map((teachers, i) => {
+                return (<div className='tutorsContainer' key={i}>
+                  <div className='tutorsThumbnail' onClick={() => this.navigateToProfile('insert name here')}>
+                    <img className='tutorsImage' src={teachers.imgUrl} />
+                    <div className='test'>
+                      <ul className='test3'>
+                        <li><h3>Name: {teachers.name}</h3></li>
+                        <li><h3>Email: {teachers.email}</h3></li>
+                        <li><h3>Specialization: {teachers.specialization}</h3></li>
+                        <li><h3>Education History: {teachers.educationLevel}</h3></li>
+                        <li><h3>Hourly Rate: {teachers.avgHourlyRate}</h3></li>
+                      </ul>
+                      <ul className='test2'>
+                        <li><h3>Phone: {teachers.phone}</h3></li>
+                        <li><h3>Subjects Offered: {teachers.subjectsOffered}</h3></li>
+                        <li><h3>Availability: {teachers.availability}</h3></li>
+                        <li><h3>Hourly Rate: {teachers.avgHourlyRate}</h3></li>
+                        <li><h3>Location: {teachers.location}</h3></li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>)
+              })
+            }
+
+
             {/* props.map ENDS HERE! */}
 
           </div>
@@ -79,4 +89,8 @@ const mapStateToProps = state => ({
   teachers: state.teachers
 })
 
-export default connect(mapStateToProps)(Tutors);
+const mapDispatchToProps = dispatch => ({
+  getTeachers: () => dispatch(getTeachers())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Tutors);
