@@ -1,6 +1,5 @@
 const express   = require('express');
 const router    = express.Router();
-
 const { allTeachers, singleTeacher, addTeacher, updateTeacher, deleteTeacher } = require ('../controllers/teachers-controller')
 // import rides controller
 // router.get('/', function(req, res) {
@@ -11,7 +10,7 @@ const { allTeachers, singleTeacher, addTeacher, updateTeacher, deleteTeacher } =
 router.get( '/', allTeachers)
 
 // Get      a ride by id
-router.get('/:userID', singleTeacher)
+router.get('/:userID',  singleTeacher)
 
 // Create   a ride
 router.post('/', addTeacher)
