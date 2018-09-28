@@ -46,11 +46,11 @@ var teacherSchema = new Schema({
     },
     bio: {
         type: String,
-        required: true,
+        required: false
     },
     educationHistory: {
         type: String,
-        required: true,
+        required: false
     },
     subjectsOffered: {
         type: String,
@@ -58,14 +58,18 @@ var teacherSchema = new Schema({
     },
     availability: {
         type: String,
-        required: true,
+        required: false,
     },
     avgHourlyRate: {
         type: String,
-        required: true,
+        required: false,
     },
     imgUrl: {
         type: String
+    },
+    date: {
+        type: Date,
+        default: Date.now
     }
 });
 
