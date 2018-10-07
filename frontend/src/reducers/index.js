@@ -35,7 +35,11 @@ import {
       case TEACHER_ID:
       return({ ...state, ID: action.ID})
       case GET_SINGLE_ASYNC:
+<<<<<<< HEAD
       return({ ...state, teacher: action.teacher })
+=======
+      return({ ... state, teacher: action.teacher })
+>>>>>>> 7ab7901f139630510afb79721bbbb5ef2fff36cb
       default:
       return state;
     }
