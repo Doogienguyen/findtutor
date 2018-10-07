@@ -1,8 +1,7 @@
 import React, { Component } from 'react';
-import { array, func } from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getTeachers } from '../actions/index';
+import { getTeachers, changePath, tutorID, singleTeacher } from '../actions/index';
 
 class Tutors extends Component {
   state = {
@@ -18,11 +17,17 @@ class Tutors extends Component {
     this.props.getTeachers()
   }
 
+  tutorProfile = ID => {
+    this.props.tutorID(ID)
+    this.props.singleTeacher(ID)
+
+    this.props.changePath("TUTORPROFILE")
+  }
 
   render() {
     let { teachers } = this.props
     return (
-      this.props.teachers &&
+      teachers &&
       <div>
         <div className = 'searchBar'>
           <input />
@@ -33,11 +38,11 @@ class Tutors extends Component {
           <div className='mapContainer'>
             {/* props.map HERE! */}
             {
-              this.props.teachers.map((teachers, i) => {
+              teachers.map((teachers, i) => {
                 return (<div className='tutorsContainer' key={i}>
                   <div className='tutorsThumbnail' onClick={() => this.navigateToProfile('insert name here')}>
-                    <img className='tutorsImage' src={teachers.imgUrl} />
-                    <div className='test'>
+                    <img className='tutorsImage' src={teachers.imgUrl} alt = "Tutor Profile"/>
+                    <div style = {{display: 'flex'}}>
                       <ul className='test3'>
                         <li><h3>Name: {teachers.name}</h3></li>
                         <li><h3>Email: {teachers.email}</h3></li>
@@ -53,6 +58,7 @@ class Tutors extends Component {
                         <li><h3>Location: {teachers.location}</h3></li>
                       </ul>
                     </div>
+                    <button className = 'btn btn-primary' onClick = {() => this.tutorProfile(teachers._id)}/>
                   </div>
                 </div>)
               })
@@ -63,34 +69,22 @@ class Tutors extends Component {
 
           </div>
         </div>
-        {
-          // props.people.map((person, i) => {
-          //   /**
-          //    * Feel free to inspect the person variable here
-          //    * 
-          //    * Note we will want to make this table row clickable
-          //    */
-          //   return (
-          //     <tr onClick={() => { props.selectPerson(person.id) }} key={person.id}>
-          //       <th>{i + 1}</th>
-          //       <td>{person.name}</td>
-          //       <td> Moveslist</td>
-          //       <td>{person.id}</td>
-          //     </tr>
-          //   )
-          // })
-        }
       </div>
     );
   }
 }
 
 const mapStateToProps = state => ({
-  teachers: state.teachers
+  teachers: state.teachers,
+  teacher: state.teacher
 })
 
 const mapDispatchToProps = dispatch => ({
-  getTeachers: () => dispatch(getTeachers())
+  getTeachers: () => dispatch(getTeachers()),
+  changePath: (path) => dispatch(changePath(path)),
+  tutorID: (ID) => dispatch(tutorID(ID)),
+  singleTeacher: ID => dispatch(singleTeacher(ID))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tutors);
