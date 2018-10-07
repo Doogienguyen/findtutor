@@ -4,6 +4,9 @@ import {
   ADD_TEACHER_ASYNC,
   EDIT_TEACHER_ASYNC,
   DELETE_TEACHER_ASYNC,
+  PATH_CHANGE,
+  TEACHER_ID,
+  GET_SINGLE_ASYNC
 } from '../constants'
 
 
@@ -22,6 +25,12 @@ export const getTeachers = () => async dispatch => {
   dispatch({ type: GET_TEACHERS_ASYNC, teachers: response.data.teachers });
 }
 
+export const singleTeacher = (id) => async dispatch => {
+  let response = await axios.get(`http://localhost:5000/api/teachers/${id}`);
+  dispatch({ type: GET_SINGLE_ASYNC, teacher: response.data.teacher });
+  console.log(response.data.teacher);
+}
+
 export const addTeacher = teacher => async dispatch => {
   let response = await axios.post('http://localhost:5000/api/teachers/', teacher);
   dispatch({ type: ADD_TEACHER_ASYNC, teacher: response.data.newTeacher });
@@ -35,4 +44,12 @@ export const editTeacher = (id, teacher) => async dispatch => {
 export const deleteTeacher = id => async dispatch => {
   let response = await axios.delete(`http://localhost:5000/api/teachers/${id}`);
   dispatch({ type: DELETE_TEACHER_ASYNC, teachers: response.data.deletedTeacher });
+}
+
+export const changePath = path => async dispatch => {
+  dispatch({ type: PATH_CHANGE, path: path })
+}
+
+export const tutorID = ID => async dispatch => {
+  dispatch({ type: TEACHER_ID, ID: ID})
 }

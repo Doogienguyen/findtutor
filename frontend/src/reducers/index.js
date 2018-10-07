@@ -4,11 +4,17 @@ import {
   ADD_TEACHER_ASYNC,
   EDIT_TEACHER_ASYNC,
   DELETE_TEACHER_ASYNC,
+  PATH_CHANGE,
+  TEACHER_ID,
+  GET_SINGLE_ASYNC
 } from '../constants'
 
   
   const initialState = {
-    teachers: ''     
+    teachers: '',
+    path: "TUTORS",
+    ID: '',
+    teacher: ''
   }
   // you may also choose to use 'localStorage' (better/standard industry practice) 
   // to manage token info instead of in your Redux store 
@@ -24,6 +30,12 @@ import {
       return ({...state, teachers: [...action.teacher]})
       case DELETE_TEACHER_ASYNC:
       return ({...state, teachers: [...action.deletedTeacher]})  
+      case PATH_CHANGE:
+      return ({ ...state, path: action.path })
+      case TEACHER_ID:
+      return({ ...state, ID: action.ID})
+      case GET_SINGLE_ASYNC:
+      return({ ... state, teacher: action.teacher })
       default:
       return state;
     }

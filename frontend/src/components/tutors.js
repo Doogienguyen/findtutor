@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { array, func } from 'prop-types';
 import { Switch, Route, Redirect } from 'react-router-dom';
 import { connect } from 'react-redux';
-import { getTeachers } from '../actions/index';
+import { getTeachers, changePath, tutorID, singleTeacher } from '../actions/index';
 
 class Tutors extends Component {
   state = {
@@ -18,6 +18,12 @@ class Tutors extends Component {
     this.props.getTeachers()
   }
 
+  tutorProfile = ID => {
+    this.props.tutorID(ID)
+    this.props.singleTeacher(ID)
+
+    this.props.changePath("TUTORPROFILE")
+  }
 
   render() {
     let { teachers } = this.props
@@ -53,6 +59,7 @@ class Tutors extends Component {
                         <li><h3>Location: {teachers.location}</h3></li>
                       </ul>
                     </div>
+                    <button className = 'btn btn-primary' onClick = {() => this.tutorProfile(teachers._id)}/>
                   </div>
                 </div>)
               })
@@ -86,11 +93,16 @@ class Tutors extends Component {
 }
 
 const mapStateToProps = state => ({
-  teachers: state.teachers
+  teachers: state.teachers,
+  teacher: state.teacher
 })
 
 const mapDispatchToProps = dispatch => ({
-  getTeachers: () => dispatch(getTeachers())
+  getTeachers: () => dispatch(getTeachers()),
+  changePath: (path) => dispatch(changePath(path)),
+  tutorID: (ID) => dispatch(tutorID(ID)),
+  singleTeacher: ID => dispatch(singleTeacher(ID))
+
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(Tutors);

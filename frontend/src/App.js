@@ -2,10 +2,11 @@ import React, { Component } from 'react';
 import './App.css';
 import Tutors from './components/tutors'
 import { connect } from 'react-redux';
-import { addTeacher, getTeachers } from './actions/index';
+import { addTeacher, getTeachers, changePath } from './actions/index';
 import Header from './components/header'
 import LeftForm from './components/left-form';
 import RightForm from './components/right-form';
+import TutorInfo from './components/tutorInfo';
 
 class App extends Component {
   state = {
@@ -19,7 +20,6 @@ class App extends Component {
         password: '1'
       }
     ],
-    path: "HOME",
     badEntry: false,
   }
 
@@ -51,7 +51,7 @@ class App extends Component {
 
   render() {
     return (
-     this.state.path == "HOME"
+     this.props.currentPath == "HOME"
       ? <div className='container'>
         <Header />
         <div className="row forms-div">
@@ -79,15 +79,22 @@ class App extends Component {
           </div>
         </div>
       </div>
-      : this.state.path == "TUTORS"
+      : this.props.currentPath == "TUTORS"
       ? <Tutors />
+      : this.props.currentPath == "TUTORPROFILE"
+      ? <TutorInfo/>
       : <h1>Login</h1>
     );
   }
 }
-const mapDispatchToProps = dispatch => ({
-  addTeacher: teacher => dispatch(addTeacher(teacher)),
-  getTeachers: () => dispatch(getTeachers())
+const mapStateToProps = state => ({
+  currentPath: state.path
 })
 
-export default connect(null, mapDispatchToProps)(App);
+const mapDispatchToProps = dispatch => ({
+  addTeacher: teacher => dispatch(addTeacher(teacher)),
+  getTeachers: () => dispatch(getTeachers()),
+  changePath: (path) => dispatch(changePath(path))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);
