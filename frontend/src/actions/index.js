@@ -51,8 +51,4 @@ export const changePath = path => async dispatch => {
 
 export const tutorID = ID => async dispatch => {
   dispatch({ type: TEACHER_ID, ID: ID})
-<<<<<<< HEAD
 }
-=======
-}
->>>>>>> 7ab7901f139630510afb79721bbbb5ef2fff36cb
