@@ -229,14 +229,15 @@ hr {
 }
 .sidebarInfo {
 flex:1;
-  background-color: blue
+  background-color: #bbfdff
 }
 .textStyleProfile h3 {
   font-size: 20px;
 }
 
-.test {
+.mainContent {
   display: flex;
   flex-direction: row;
   height: 100%;
+  background-color:	#39a3be;
 }
