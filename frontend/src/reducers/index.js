@@ -12,7 +12,7 @@ import {
   
   const initialState = {
     teachers: '',
-    path: "TUTORS",
+    path: "SIGNUP",
     ID: '',
     teacher: ''
   }
