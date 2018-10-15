@@ -797,3 +797,4 @@
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:10 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:18 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:22 +0000] "GET /api/teachers/5bae93fb6c48aa21cea5874a HTTP/1.1" 200 1312 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
+::1 - - [09/Oct/2018:05:27:46 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
