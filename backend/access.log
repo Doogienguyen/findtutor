@@ -838,6 +838,9 @@
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:10 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:18 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
 ::ffff:127.0.0.1 - - [08/Oct/2018:04:32:22 +0000] "GET /api/teachers/5bae93fb6c48aa21cea5874a HTTP/1.1" 200 1312 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
+<<<<<<< HEAD
+::1 - - [09/Oct/2018:05:27:46 +0000] "GET /api/teachers/ HTTP/1.1" 200 8061 "http://localhost:3000/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10.13; rv:62.0) Gecko/20100101 Firefox/62.0"
+=======
 >>>>>>> 72605ba7a98c1d277683c69f4d02be2b1adf80b0
 ::1 - - [09/Oct/2018:04:30:48 +0000] "GET /api/teachers/ HTTP/1.1" 200 8057 "http://localhost:3000/search" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 ::1 - - [09/Oct/2018:04:30:55 +0000] "GET /api/teachers/5bae6d5d66616f8585c6706f HTTP/1.1" 200 1310 "http://localhost:3000/search" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
@@ -1281,3 +1284,4 @@
 ::1 - - [10/Oct/2018:23:55:55 +0000] "GET /api/teachers/ HTTP/1.1" 200 9735 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 ::1 - - [10/Oct/2018:23:56:01 +0000] "GET /api/teachers/ HTTP/1.1" 200 9735 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
 ::1 - - [10/Oct/2018:23:56:37 +0000] "GET /api/teachers/ HTTP/1.1" 200 9735 "http://localhost:3001/" "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_13_6) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/69.0.3497.100 Safari/537.36"
+>>>>>>> d5993833a08c3ed5490efd4cc4825b47661fa97e
