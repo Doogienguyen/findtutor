@@ -2,21 +2,62 @@ import React, { Component } from 'react';
 import Owl from '../images/Owl5.png';
 import Branch from '../images/Branch.png';
 import { connect } from 'react-redux';
-import { addTeacher, changePath } from '../actions/index';
+import { changePath, addTeacher } from '../actions/index';
 
-let w = window,
-    d = document,
-    e = d.documentElement,
-    g = d.getElementsByTagName('body')[0]
-    // x = w.innerWidth || e.clientWidth || g.clientWidth,
 
 class SignUp extends Component {
     state = {
+        firstName: '',
+        lastName: '',
+        username: '',
+        password: '',
+        phone: '',
+        location: '',
+        education: '',
+        email: '',
+        history: '',
+        subjects: '',
+        confirmPassword: '',
+        hourly: '',
+        specialization: ''
+    }
+
+    submitTeacherForm = () => {
+        let { firstName, lastName, username, password, phone, location, education, email, history, subjects, hourly, specialization } = this.state;
+        this.props.addTeacher({
+            "name": firstName + lastName,
+            "username": username,
+            "password": password,
+            "email": email,
+            "phone": phone,
+            "location": location,
+            "educationLevel": education,
+            "specialization": specialization,
+            "educationHistory": history,
+            "subjectsOffered": subjects,
+            "avgHourlyRate": hourly
+        });
+
+        this.setState({
+            firstName: '',
+            lastName: '',
+            username: '',
+            password: '',
+            phone: '',
+            location: '',
+            education: '',
+            email: '',
+            history: '',
+            subjects: '',
+            confirmPassword: '',
+            hourly: '',
+            specialization: ''
+        })
     }
 
     render() {
         return (
-            <div className="SignUpBackground" style={{ maxHeight: 1080, maxWidth: 1920 }}>
+            <div className="SignUpBackground" style={{ maxWidth: 1920 }}>
                 <div className="header" style={{ backgroundColor: 'transparent', color: 'white' }}>
                     <a onClick={() => this.props.changePath("HOME")} href="#default" className="logo" style={{ marginLeft: 40, fontFamily: "Fredericka the Great" }}>Tutor To-Go</a>
                     <div className="header-right" style={{ display: 'flex', flexDirection: "row" }}>
@@ -35,91 +76,90 @@ class SignUp extends Component {
                     </div>
 
                     {/*                                            Scrollable Input Form                                                   */}
-                    <div class="scrollable" style={{ display: 'flex', flex: 4, backgroundColor: "gainsboro", height: '100%', alignItems: 'center', flexDirection: 'column' }}>
+                    {/* <div class="scrollable" style={{ display: 'flex', flex: 4, backgroundColor: "gainsboro", height: '100%', alignItems: 'center', flexDirection: 'column' }}> */}
+                    <div className="register" style={{ height: '100%', width: '80%' }}>
+                        <div className="row">
+                            <div className="col-md-3 register-left">
+                                <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
+                                <h3>Welcome</h3>
+                                <p>Sign up as a tutor to help students mold their future!</p>
+                                <input type="submit" name="" value="Login" onClick={() => this.props.changePath('HOME')} /><br />
+                            </div>
+                            <div className="col-md-9 register-right">
 
-                        <div class="register" style = {{marginTop: -10}}>
-                            <div class="row">
-                                <div class="col-md-3 register-left">
-                                    <img src="https://image.ibb.co/n7oTvU/logo_white.png" alt="" />
-                                    <h3>Welcome</h3>
-                                    <p>Sign up as a tutor to help students mold their future or sign up as a student and learn from the best tutors near you!</p>
-                                    <input type="submit" name="" value="Login" /><br />
-                                </div>
-                                <div class="col-md-9 register-right">
-      
-                                    <div class="tab-content" id="myTabContent">
-                                        <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                                            <h3 class="register-heading">Apply as a tutor</h3>
-                                            <div class="row register-form">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="First Name" value={this.state.firstName} onChange={this.onFirstName} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Last Name" value={this.state.lastName} onChange={this.onLastNameChange}/>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Username" value={this.state.username} onChange={this.onUsernameChange}/>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="password" class="form-control" placeholder="Password" value={this.state.password} onChange={this.onPasswordChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Phone Number" value={this.state.phone} onChange={this.onPhoneChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Location (Zipcode)" value={this.state.location} onChange={this.onLocationChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Education Level" value={this.state.education} onChange={this.onEducationChange} />
-                                                    </div>
-
-                                                    <div class="form-group">
-                                                        <div class="maxl">
-                                                            <label class="radio inline">
-                                                                <input type="radio" name="gender" value="male" checked />
-                                                                <span> Male </span>
-                                                            </label>
-                                                            <label class="radio inline">
-                                                                <input type="radio" name="gender" value="female" />
-                                                                <span>Female </span>
-                                                            </label>
-                                                        </div>
-                                                    </div>
+                                <div className="tab-content" id="myTabContent">
+                                    <div className="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+                                        <h3 className="register-heading">Apply as a tutor</h3>
+                                        <div className="row register-form">
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="First Name" value={this.state.firstName} onChange={(e) => this.setState({ firstName: e.target.value })} />
                                                 </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <input type="email" class="form-control" placeholder="Your Email" value={this.state.email} onChange={this.onEmailChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Education History" value={this.state.history} onChange={this.onHistoryChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Subjects Offered" value={this.state.subjects} onChange={this.onSubjectsChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="password" class="form-control" placeholder="Confirm Password" value={this.state.confirmPassword} onChange={this.onConfirmPasswordChange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Hourly Rate" value={this.state.hourly} onChange={this.onHourlychange} />
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <input type="text" class="form-control" placeholder="Specialization" value={this.state.specialization} onChange={this.onSpecializationChange} />
-                                                    </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Last Name" value={this.state.lastName} onChange={(e) => this.setState({ lastName: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Username" value={this.state.username} onChange={(e) => this.setState({ username: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="password" className="form-control" placeholder="Password" value={this.state.password} onChange={(e) => this.setState({ password: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Phone Number" value={this.state.phone} onChange={(e) => this.setState({ phone: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Location (Zipcode)" value={this.state.location} onChange={(e) => this.setState({ location: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Education Level" value={this.state.education} onChange={(e) => this.setState({ education: e.target.value })} />
+                                                </div>
 
-                                                    <input type="submit" class="btnRegister" value="Sign Up" />
+                                                <div className="form-group">
+                                                    <div className="maxl">
+                                                        <label className="radio inline">
+                                                            <input type="radio" name="gender" value="male" defaultChecked />
+                                                            <span> Male </span>
+                                                        </label>
+                                                        <label className="radio inline">
+                                                            <input type="radio" name="gender" value="female" />
+                                                            <span>Female </span>
+                                                        </label>
+                                                    </div>
                                                 </div>
                                             </div>
-                                        </div>                                 
+                                            <div className="col-md-6">
+                                                <div className="form-group">
+                                                    <input type="email" className="form-control" placeholder="Your Email" value={this.state.email} onChange={(e) => this.setState({ email: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Education History" value={this.state.history} onChange={(e) => this.setState({ history: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Subjects Offered" value={this.state.subjects} onChange={(e) => this.setState({ subjects: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="password" className="form-control" placeholder="Confirm Password" value={this.state.confirmPassword} onChange={(e) => this.setState({ confirmPassword: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Hourly Rate" value={this.state.hourly} onChange={(e) => this.setState({ hourly: e.target.value })} />
+                                                </div>
+                                                <div className="form-group">
+                                                    <input type="text" className="form-control" placeholder="Specialization" value={this.state.specialization} onChange={(e) => this.setState({ specialization: e.target.value })} />
+                                                </div>
+
+                                                <input type="submit" className="btnRegister" value="Sign Up" onClick={() => this.submitTeacherForm()} />
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-
                         </div>
 
                     </div>
+
                 </div>
             </div>
+            // </div>
         )
 
 
@@ -127,8 +167,8 @@ class SignUp extends Component {
 }
 
 const mapDispatchToProps = dispatch => ({
-    addTeacher: teacher => dispatch(addTeacher(teacher)),
-    changePath: (path) => dispatch(changePath(path))
+    changePath: (path) => dispatch(changePath(path)),
+    addTeacher: (teacher) => dispatch(addTeacher(teacher))
 })
 
 

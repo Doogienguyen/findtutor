@@ -23,14 +23,11 @@ var teacherSchema = new Schema({
         type: String,
         required: true,
         trim: true,
-        minlength: 7
     },
     phone: {
         type: String,
         required: true,
         trim: true,
-        minlength: 10,
-        maxlength: 10
     },
     location: {
         type: String,
@@ -65,11 +62,13 @@ var teacherSchema = new Schema({
         required: false,
     },
     imgUrl: {
-        type: String
+        type: String,
+        required: false
     },
     date: {
         type: Date,
-        default: Date.now
+        default: Date.now,
+        required: false
     }
 });
 

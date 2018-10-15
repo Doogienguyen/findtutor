@@ -31,6 +31,8 @@ export const singleTeacher = (id) => async dispatch => {
 }
 
 export const addTeacher = teacher => async dispatch => {
+  console.log("TEACHERS INPUT: ")
+  console.log(teacher);
   let response = await axios.post('http://localhost:5000/api/teachers/', teacher);
   dispatch({ type: ADD_TEACHER_ASYNC, teacher: response.data.newTeacher });
 }

@@ -19,7 +19,7 @@ render() {
                     <div className="header" style={{backgroundColor: "#f0d4c2"}}>
                     <a href="#default" className="logo">Tutor To-Go</a>
                     <div className="header-right">
-                        <a className="active" href="#home">Home</a>
+                        <a className="active" href="#home" onClick={()=> this.props.changePath("HOME")}>Home</a>
                         <a href="#contact">Contact</a>
                         <a onClick={()=> this.props.changePath("TUTORS")}>Tutors</a>
                         <a onClick = {() => this.props.changePath("SIGNUP")}>Sign Up</a>
