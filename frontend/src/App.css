@@ -218,28 +218,66 @@ hr {
   background-color: 'white'; 
 }
 
-.backgroundImageProfile {
+/* .backgroundImageProfile {
   width: 100%;
-  height: 200px;
-  background-color: #6bdfe9;
-  padding-left: 15px;
-  padding-top: 15px;
-  background-image: url("https://theme.zdassets.com/theme_assets/1094383/4cfd7a78108ee3dee5ab8740b850e8cd76afa850.png");
+  height: 100px;
+  background-color: #f0d4c2;
+  padding-left: 65px;
+  padding-top: 10px;
+  background-image: "/static/media/LogoThumbnail.851763ab.png";
   background-repeat: no-repeat;
   flex: 1;
   background-size: contain;
-  background-position-x: 300px;
-}
+  background-position-x: 25px;
+} */
 .sidebarInfo {
-flex:1;
-  background-color: blue
+  background-color: #e4aea2;
+  flex: 1
 }
-.textStyleProfile h3 {
-  font-size: 20px;
+.textStyleProfile h4 {
+  font-size: 13px;
+  padding-top: 15px;
 }
 
-.test {
+
+.mainContent {
   display: flex;
+  flex: 4;
   flex-direction: row;
   height: 100%;
+  background-color: whitesmoke;
+  border: 1px solid black;
+}
+.sideBarIcon {
+  height: 44px;
+  width: 37px;
+  margin-left: 9px;
+  flex-direction: row;
+  margin-right: 8px;
+  padding-bottom: 4px;
+
+}
+
+.firstSection {
+  border-bottom: 2px solid 	#a8b0bb;
+  font-family: serif;
+  padding-left: 5px;
+  font-family: Lora;
+  padding-top: 5px;
+}
+
+.secondSection {
+  border-bottom: 2px solid 	#a8b0bb;
+  font-family: serif;
+  padding-left: 5px;
+  font-family: Lora;
+  padding-top: 5px;
+}
+
+.thirdSection {
+  border-bottom: 2px solid 	#a8b0bb;
+  font-family: serif;
+  padding-left: 5px;
+  font-family: Lora;
+  padding-top: 5px;
 }
