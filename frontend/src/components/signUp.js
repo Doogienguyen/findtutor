@@ -22,7 +22,7 @@ class SignUp extends Component {
                     <div className="header-right" style={{ display: 'flex', flexDirection: "row" }}>
                         <h4 style={{ fontFamily: "Fredericka the Great", alignSelf: 'flex-start', marginRight: -60 }}>Start your career!</h4>
                         <h4 style={{ fontFamily: "Fredericka the Great", alignSelf: 'flex-end', marginRight: 20 }}>Lead the Children of the Future!</h4>
-                        <img style={{ width: 60, marginBottom: -24, marginRight: 20 }} src={Owl} alt="Owl" />
+                        <img style={{ width: 60, height: 86, marginBottom: -24, marginRight: 20 }} src={Owl} alt="Owl" />
                     </div>
                 </div>
                 <div style={{ display: 'flex', flexDirection: 'row' }}>
