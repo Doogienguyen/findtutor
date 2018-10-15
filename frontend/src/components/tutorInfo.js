@@ -16,7 +16,7 @@ render() {
         this.props.teacher && 
         <div>
             <div>
-                            <div className="header" style={{backgroundColor: "#f0d4c2"}}>
+                    <div className="header" style={{backgroundColor: "#f0d4c2"}}>
                     <a href="#default" className="logo">Tutor To-Go</a>
                     <div className="header-right">
                         <a className="active" href="#home">Home</a>

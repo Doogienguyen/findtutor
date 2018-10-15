@@ -7,9 +7,8 @@ import { addTeacher, changePath } from '../actions/index';
 let w = window,
     d = document,
     e = d.documentElement,
-    g = d.getElementsByTagName('body')[0],
+    g = d.getElementsByTagName('body')[0]
     // x = w.innerWidth || e.clientWidth || g.clientWidth,
-    y = w.innerHeight || e.clientHeight || g.clientHeight;
 
 class SignUp extends Component {
     state = {
@@ -17,7 +16,7 @@ class SignUp extends Component {
 
     render() {
         return (
-            <div className="SignUpBackground" style={{ minHeight: y }}>
+            <div className="SignUpBackground" style={{ maxHeight: 1080, maxWidth: 1920 }}>
                 <div className="header" style={{ backgroundColor: 'transparent', color: 'white' }}>
                     <a onClick={() => this.props.changePath("HOME")} href="#default" className="logo" style={{ marginLeft: 40, fontFamily: "Fredericka the Great" }}>Tutor To-Go</a>
                     <div className="header-right" style={{ display: 'flex', flexDirection: "row" }}>
@@ -36,7 +35,7 @@ class SignUp extends Component {
                     </div>
 
                     {/*                                            Scrollable Input Form                                                   */}
-                    <div class="scrollable" style={{ display: 'flex', flex: 4, backgroundColor: "gainsboro", height: y - 102, alignItems: 'center', flexDirection: 'column' }}>
+                    <div class="scrollable" style={{ display: 'flex', flex: 4, backgroundColor: "gainsboro", height: '100%', alignItems: 'center', flexDirection: 'column' }}>
 
                         <div class="register" style = {{marginTop: -10}}>
                             <div class="row">
